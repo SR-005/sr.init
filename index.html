@@ -59,6 +59,8 @@
         }
     </style>
 </head>
+
+
 <body class="font-sans antialiased min-h-screen relative px-4 py-6 md:px-16 md:py-8 flex flex-col justify-between overflow-x-hidden selection:bg-purple-500/30">
 
     <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
@@ -330,8 +332,11 @@
                 
                 <!-- Section Header (Left Aligned) -->
                 <div class="flex flex-col items-start text-left mb-10">
-                    <span class="font-mono text-xs uppercase tracking-widest text-purple-400 font-semibold mb-2 drop-shadow-md">Superpowers aka </span>
+                    <span class="font-mono text-xs uppercase tracking-widest text-purple-400 font-semibold mb-2 drop-shadow-md">Superpowers, aka </span>
                     <h2 class="text-4xl lg:text-5xl font-black tracking-tight text-white uppercase drop-shadow-lg mb-4">Tech Stack</h2>
+                    <p class="text-sm text-zinc-400 font-light max-w-xl leading-relaxed drop-shadow-md">
+                        A look under the hood at the languages, frameworks, and tools I use to build things.
+                    </p>
                 </div>
 
                 <!-- Filter Bar (Left Aligned) -->
@@ -351,67 +356,8 @@
                     <div id="tech-grid-wrapper" class="overflow-hidden pt-10 transition-[max-height] duration-1000 ease-premium max-h-[440px] relative pb-4 stack-mask">
                         
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5 transition-all duration-500" id="tech-grid">
-                            
-                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-500/10 cursor-default" data-category="frontend">
-                                <div class="flex justify-between items-start mb-8">
-                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-orange-500/10 group-hover:border-orange-500/20 transition-all duration-500 ease-premium">
-                                        <i class="devicon-html5-plain text-xl text-orange-400 drop-shadow-md"></i>
-                                    </div>
-                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">HTML5</h4>
-                                </div>
-                            </div>
 
-                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 cursor-default" data-category="frontend">
-                                <div class="flex justify-between items-start mb-8">
-                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/10 group-hover:border-blue-500/20 transition-all duration-500 ease-premium">
-                                        <i class="devicon-css3-plain text-xl text-blue-400 drop-shadow-md"></i>
-                                    </div>
-                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">CSS3</h4>
-                                </div>
-                            </div>
-
-                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow-500/10 cursor-default" data-category="frontend">
-                                <div class="flex justify-between items-start mb-8">
-                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-yellow-500/10 group-hover:border-yellow-500/20 transition-all duration-500 ease-premium">
-                                        <i class="devicon-javascript-plain text-xl text-yellow-400 drop-shadow-md"></i>
-                                    </div>
-                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">JavaScript</h4>
-                                </div>
-                            </div>
-
-                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/10 cursor-default" data-category="frontend">
-                                <div class="flex justify-between items-start mb-8">
-                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-cyan-500/10 group-hover:border-cyan-500/20 transition-all duration-500 ease-premium">
-                                        <i class="devicon-tailwindcss-original text-xl text-cyan-400 drop-shadow-md"></i>
-                                    </div>
-                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Tailwind CSS</h4>
-                                </div>
-                            </div>
-
-                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="frontend">
-                                <div class="flex justify-between items-start mb-8">
-                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
-                                        <i class="devicon-bootstrap-plain text-xl text-purple-400 drop-shadow-md"></i>
-                                    </div>
-                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Bootstrap</h4>
-                                </div>
-                            </div>
-
+                            <!-- PYTHON -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="backend">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
@@ -424,18 +370,7 @@
                                 </div>
                             </div>
 
-                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="backend">
-                                <div class="flex justify-between items-start mb-8">
-                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
-                                        <i class="devicon-fastapi-plain text-xl text-purple-400 drop-shadow-md"></i>
-                                    </div>
-                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Backend</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">FastAPI</h4>
-                                </div>
-                            </div>
-
+                            <!-- DJANGO -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="backend">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
@@ -448,6 +383,20 @@
                                 </div>
                             </div>
 
+                            <!-- FASTAPI -->
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="backend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-fastapi-plain text-xl text-purple-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Backend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">FastAPI</h4>
+                                </div>
+                            </div>
+
+                            <!-- FLASK -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="backend">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
@@ -460,6 +409,7 @@
                                 </div>
                             </div>
 
+                            <!-- LANGCHAIN -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 cursor-default" data-category="ai-data">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/10 group-hover:border-blue-500/20 transition-all duration-500 ease-premium">
@@ -472,6 +422,7 @@
                                 </div>
                             </div>
 
+                            <!-- PANDAS -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 cursor-default" data-category="ai-data">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-indigo-500/10 group-hover:border-indigo-500/20 transition-all duration-500 ease-premium">
@@ -484,6 +435,7 @@
                                 </div>
                             </div>
 
+                            <!-- NUMPY -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-sky-500/10 cursor-default" data-category="ai-data">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-sky-500/10 group-hover:border-sky-500/20 transition-all duration-500 ease-premium">
@@ -496,6 +448,7 @@
                                 </div>
                             </div>
 
+                            <!-- SCIKIT-LEARN -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-500/10 cursor-default" data-category="ai-data">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-orange-500/10 group-hover:border-orange-500/20 transition-all duration-500 ease-premium">
@@ -508,6 +461,7 @@
                                 </div>
                             </div>
 
+                            <!-- OPENCV -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-500/10 cursor-default" data-category="ai-data">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-red-500/10 group-hover:border-red-500/20 transition-all duration-500 ease-premium">
@@ -520,6 +474,7 @@
                                 </div>
                             </div>
 
+                            <!-- MEDIAPIPE -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-500/10 cursor-default" data-category="ai-data">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-teal-500/10 group-hover:border-teal-500/20 transition-all duration-500 ease-premium">
@@ -532,6 +487,7 @@
                                 </div>
                             </div>
 
+                            <!-- XGBOOST -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 cursor-default" data-category="ai-data">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/10 group-hover:border-blue-500/20 transition-all duration-500 ease-premium">
@@ -544,6 +500,7 @@
                                 </div>
                             </div>
 
+                            <!-- MATPLOTLIB -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-500/10 cursor-default" data-category="ai-data">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-green-500/10 group-hover:border-green-500/20 transition-all duration-500 ease-premium">
@@ -556,6 +513,7 @@
                                 </div>
                             </div>
 
+                            <!-- SEABORN -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 cursor-default" data-category="ai-data">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-indigo-500/10 group-hover:border-indigo-500/20 transition-all duration-500 ease-premium">
@@ -568,6 +526,7 @@
                                 </div>
                             </div>
 
+                            <!-- SOLIDITY -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/10 cursor-default" data-category="web3">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/10 group-hover:border-emerald-500/20 transition-all duration-500 ease-premium">
@@ -580,6 +539,7 @@
                                 </div>
                             </div>
 
+                            <!-- WEB3.PY -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/10 cursor-default" data-category="web3">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/10 group-hover:border-emerald-500/20 transition-all duration-500 ease-premium">
@@ -592,6 +552,7 @@
                                 </div>
                             </div>
 
+                            <!-- IPFS -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/10 cursor-default" data-category="web3">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/10 group-hover:border-emerald-500/20 transition-all duration-500 ease-premium">
@@ -604,6 +565,7 @@
                                 </div>
                             </div>
 
+                            <!-- POSTGRESQL -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-500/10 cursor-default" data-category="database">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-amber-500/10 group-hover:border-amber-500/20 transition-all duration-500 ease-premium">
@@ -616,6 +578,7 @@
                                 </div>
                             </div>
 
+                            <!-- MYSQL AND SQLITE3 -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-500/10 cursor-default" data-category="database">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-amber-500/10 group-hover:border-amber-500/20 transition-all duration-500 ease-premium">
@@ -628,6 +591,7 @@
                                 </div>
                             </div>
 
+                            <!-- PLAYWRIGHT -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-rose-500/10 cursor-default" data-category="tools">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-rose-500/10 group-hover:border-rose-500/20 transition-all duration-500 ease-premium">
@@ -640,6 +604,72 @@
                                 </div>
                             </div>
 
+                            <!-- HTML -->
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-500/10 cursor-default" data-category="frontend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-orange-500/10 group-hover:border-orange-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-html5-plain text-xl text-orange-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">HTML5</h4>
+                                </div>
+                            </div>
+
+                            <!-- CSS -->
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 cursor-default" data-category="frontend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/10 group-hover:border-blue-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-css3-plain text-xl text-blue-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">CSS3</h4>
+                                </div>
+                            </div>
+
+                            <!-- JAVASCRIPT -->
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow-500/10 cursor-default" data-category="frontend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-yellow-500/10 group-hover:border-yellow-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-javascript-plain text-xl text-yellow-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">JavaScript</h4>
+                                </div>
+                            </div>
+
+                            <!-- TAILWIND -->
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/10 cursor-default" data-category="frontend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-cyan-500/10 group-hover:border-cyan-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-tailwindcss-original text-xl text-cyan-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Tailwind CSS</h4>
+                                </div>
+                            </div>
+
+                            <!-- BOOTSTRAP -->
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="frontend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-bootstrap-plain text-xl text-purple-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Bootstrap</h4>
+                                </div>
+                            </div>
+
+                            <!-- GIT AND GITHUB -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-rose-500/10 cursor-default" data-category="tools">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-rose-500/10 group-hover:border-rose-500/20 transition-all duration-500 ease-premium">
@@ -652,6 +682,7 @@
                                 </div>
                             </div>
 
+                            <!-- VERCEL AND RENDER -->
                             <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-rose-500/10 cursor-default" data-category="tools">
                                 <div class="flex justify-between items-start mb-8">
                                     <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-rose-500/10 group-hover:border-rose-500/20 transition-all duration-500 ease-premium">
@@ -727,15 +758,8 @@
         <div class="flex flex-col items-center text-center mb-12">
             <h2 class="text-4xl lg:text-5xl font-black tracking-tight text-white uppercase drop-shadow-lg mb-4">Project Builds</h2>
             <p class="text-sm text-zinc-400 font-light max-w-2xl leading-relaxed drop-shadow-md">
-                A selection of autonomous agents, predictive models, and scalable architectures I have built.
+                An inventory of autonomous agentic systems, predictive machine learning pipelines, and production-ready server architectures built from the ground up.
             </p>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
-            <button class="proj-filter-btn active px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-purple-500/20 text-purple-300 border border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.2)]" data-filter="all">All Specs</button>
-            <button class="proj-filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="ai-ml">AI & ML</button>
-            <button class="proj-filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="backend">Backend</button>
-            <button class="proj-filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="web3">Web3</button>
         </div>
 
         <div class="relative w-full pb-14" id="projects-collapse-wrapper">
@@ -744,6 +768,7 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 transition-all duration-500" id="projects-grid">
             
+            <!-- Rail Agent -->
             <div class="proj-tile col-span-1 md:col-span-2 lg:col-span-3 glass-panel rounded-[2rem] p-6 lg:p-8 flex flex-col lg:flex-row gap-8 lg:gap-12 group transition-all duration-500 ease-premium hover:shadow-[0_0_40px_rgba(168,85,247,0.15)] hover:border-purple-500/30" data-category="ai-ml backend">
                 
                 <div class="w-full lg:w-1/2 aspect-video lg:aspect-auto overflow-hidden rounded-[1.5rem] relative glass-panel border border-white/5">
@@ -772,11 +797,11 @@
                     </p>
                     
                     <div class="flex flex-wrap gap-4 mt-auto">
-                        <a href="#" target="_blank" class="flex items-center gap-2 px-5 py-2.5 bg-white text-[#050505] hover:bg-zinc-200 text-[11px] font-bold rounded-xl tracking-wide transition-colors">
+                        <a class="flex items-center gap-2 px-5 py-2.5 bg-white/50 text-[#050505]/70 text-[11px] font-bold rounded-xl tracking-wide cursor-not-allowed pointer-events-none">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                             Live System
                         </a>
-                        <a href="#" target="_blank" class="flex items-center gap-2 px-5 py-2.5 glass-panel text-zinc-300 hover:text-white hover:border-white/30 text-[11px] font-bold rounded-xl tracking-wide transition-all duration-300">
+                        <a href="https://github.com/SR-005/rail-agent" target="_blank" class="flex items-center gap-2 px-5 py-2.5 glass-panel text-zinc-300 hover:text-white hover:border-white/30 text-[11px] font-bold rounded-xl tracking-wide transition-all duration-300">
                             <i class="devicon-github-original text-base"></i>
                             Source Code
                         </a>
@@ -784,6 +809,7 @@
                 </div>
             </div>
 
+            <!-- Gradegaze -->
             <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="ai-ml">
                 <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
                     <img src="images/gradegaze.png" alt="GradeGaze" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
@@ -791,7 +817,6 @@
                 </div>
                 
                 <div class="px-2 flex flex-col flex-grow">
-                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Predictive ML / Regression</span>
                     <h3 class="text-xl font-bold text-white tracking-wide mb-3">GradeGaze</h3>
                     <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
                         A clean, straightforward machine learning tool built to predict future academic marks before final exams. Feeding past performance data into a high-performance XGBoost model bypasses guesswork to spot scoring trends early via Matplotlib charts.
@@ -802,16 +827,17 @@
                             Read More
                         </button>
                         
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                        <a href="https://github.com/SR-005/GradeGaze" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
                             <i class="devicon-github-original text-base"></i>
+                        </a>
+                        <a href="https://gradegaze.onrender.com" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <!-- Summarease -->
             <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="ai-ml backend">
                 <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
                     <img src="images/summarease.png" alt="SummarEase" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
@@ -819,7 +845,6 @@
                 </div>
                 
                 <div class="px-2 flex flex-col flex-grow">
-                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">NLP & Text Distillation</span>
                     <h3 class="text-xl font-bold text-white tracking-wide mb-3">SummarEase</h3>
                     <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
                         An AI-powered reading assistant that deploys automated web-scraping to target URLs, bypassing layout noise. Raw text is funneled into a fine-tuned T5 Transformer model to generate human-grade summaries, all wrapped in a lightning-fast FastAPI backend.
@@ -830,16 +855,17 @@
                             Read More
                         </button>
                         
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                        <a href="https://github.com/SR-005/SummarEase" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
                             <i class="devicon-github-original text-base"></i>
+                        </a>
+                        <a class="p-2 rounded-xl bg-white/5 text-zinc-600 border border-transparent cursor-not-allowed pointer-events-none" title="Live Site (Unavailable)">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <!-- Rekord -->
             <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="web3">
                 <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
                     <img src="images/rekord.png" alt="Rekord" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
@@ -847,7 +873,6 @@
                 </div>
                 
                 <div class="px-2 flex flex-col flex-grow">
-                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Web3 Infrastructure</span>
                     <h3 class="text-xl font-bold text-white tracking-wide mb-3">Rekord</h3>
                     <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
                         Engineered to overcome the third-party API limitations, disadvantages, and verification loopholes encountered in RollCall3, Rekord is a completely custom-built POAP badge generation platform. It operates as a decentralized protocol turning event participation into permanent, on-chain Soulbound NFT credentials. Eligible users can claim their badges entirely gas-free, powered by an optimized EIP-712 meta-transaction layer handling all minting fees server-side.
@@ -858,16 +883,17 @@
                             Read More
                         </button>
                         
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                        <a href="https://github.com/SR-005/Rekord" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
                             <i class="devicon-github-original text-base"></i>
+                        </a>
+                        <a class="p-2 rounded-xl bg-white/5 text-zinc-600 border border-transparent cursor-not-allowed pointer-events-none" title="Live Site (Unavailable)">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <!-- Hopin -->
             <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="backend">
                 <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
                     <img src="images/hopin.png" alt="Hop In" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
@@ -875,7 +901,6 @@
                 </div>
                 
                 <div class="px-2 flex flex-col flex-grow">
-                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Concurrent Architecture</span>
                     <h3 class="text-xl font-bold text-white tracking-wide mb-3">Hop In</h3>
                     <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
                         A peer-to-peer ride-sharing network for college students. The robust Django backend manages complex relational database logic via PostgreSQL, featuring spatial coordination to synchronize driver routes with pickup demands in real-time.
@@ -886,16 +911,17 @@
                             Read More
                         </button>
                         
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                        <a href="https://github.com/SR-005/hopin" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
                             <i class="devicon-github-original text-base"></i>
+                        </a>
+                        <a href="https://hopin-urcg.onrender.com" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <!-- Weatherornot -->
             <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="ai-ml">
                 <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
                     <img src="images/weatherornot.png" alt="WeatherOrNot" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
@@ -903,7 +929,6 @@
                 </div>
                 
                 <div class="px-2 flex flex-col flex-grow">
-                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Time-Series Data Science</span>
                     <h3 class="text-xl font-bold text-white tracking-wide mb-3">WeatherOrNot</h3>
                     <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
                         A climate tool calculating weather trajectories from scratch. It continuously streams historical and live telemetry through Pandas/NumPy, piping datasets into custom Scikit-Learn pipelines to forecast immediate atmospheric shifts.
@@ -914,16 +939,17 @@
                             Read More
                         </button>
                         
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                        <a href="https://github.com/SR-005/weatherornot" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
                             <i class="devicon-github-original text-base"></i>
+                        </a>
+                        <a href="https://weatherornot-ff85.onrender.com" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <!-- CredChain -->
             <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="web3 backend">
                 <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
                     <img src="images/credchain.png" alt="CredChain" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
@@ -931,7 +957,6 @@
                 </div>
                 
                 <div class="px-2 flex flex-col flex-grow">
-                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Web3 Reputation</span>
                     <h3 class="text-xl font-bold text-white tracking-wide mb-3">CredChain</h3>
                     <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
                         A decentralized professional identity network built on Polkadot’s MoonBase EVM. It utilizes Web3.py and Solidity smart contracts to securely bind cryptographic proofs of work directly to a freelancer's on-chain identity, minting IPFS-backed skill badges.
@@ -941,16 +966,17 @@
                         <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="credchain">
                             Read More
                         </button>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                        <a href="https://github.com/SR-005/cred-chain" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
                             <i class="devicon-github-original text-base"></i>
+                        </a>
+                        <a class="p-2 rounded-xl bg-white/5 text-zinc-600 border border-transparent cursor-not-allowed pointer-events-none" title="Live Site (Unavailable)">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <!-- RollCall3-->
             <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="backend web3">
                 <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
                     <img src="images/rollcall3.png" alt="RollCall3" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
@@ -958,7 +984,6 @@
                 </div>
                 
                 <div class="px-2 flex flex-col flex-grow">
-                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Web3 Automation</span>
                     <h3 class="text-xl font-bold text-white tracking-wide mb-3">RollCall3</h3>
                     <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
                         An automated attendance verification engine designed to bridge real-world meeting data with digital rewards. Using Pandas to parse Zoom CSVs, it filters attendees and hooks directly into the official POAP API to automatically distribute mint links.
@@ -968,16 +993,17 @@
                         <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="rollcall3">
                             Read More
                         </button>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                        <a href="https://github.com/SR-005/RollCall3" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
                             <i class="devicon-github-original text-base"></i>
+                        </a>
+                        <a class="p-2 rounded-xl bg-white/5 text-zinc-600 border border-transparent cursor-not-allowed pointer-events-none" title="Live Site (Unavailable)">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <!-- E-Commerce -->
             <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="ai-ml">
                 <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
                     <img src="images/ecommerce.png" alt="E-Commerce Regression" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
@@ -985,7 +1011,6 @@
                 </div>
                 
                 <div class="px-2 flex flex-col flex-grow">
-                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Statistical Modeling</span>
                     <h3 class="text-xl font-bold text-white tracking-wide mb-3">E-Commerce Analytics</h3>
                     <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
                         A targeted data science project built to analyze consumer purchasing behavior. Leveraging Scikit-Learn to isolate feature coefficients, the model quantifies how platform session metrics directly affect cart conversions.
@@ -995,16 +1020,17 @@
                         <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="ecommerce">
                             Read More
                         </button>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                        <a href="https://github.com/SR-005/ecommerce-linear_regression" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
                             <i class="devicon-github-original text-base"></i>
+                        </a>
+                        <a class="p-2 rounded-xl bg-white/5 text-zinc-600 border border-transparent cursor-not-allowed pointer-events-none" title="Live Site (Unavailable)">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <!-- PingPalm -->
             <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="ai-ml frontend">
                 <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
                     <img src="images/pingpalm.png" alt="PingPalm" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
@@ -1012,7 +1038,6 @@
                 </div>
                 
                 <div class="px-2 flex flex-col flex-grow">
-                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Computer Vision & HCI</span>
                     <h3 class="text-xl font-bold text-white tracking-wide mb-3">PingPalm</h3>
                     <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
                         A real-time, gesture-controlled multiplayer game. Built on Pygame, the backend leverages MediaPipe to track coordinate vectors of players' index fingers through a webcam feed, mapping physical spatial data into digital gameplay inputs.
@@ -1022,16 +1047,17 @@
                         <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="pingpalm">
                             Read More
                         </button>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                        <a href="https://github.com/SR-005/PingPalm" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
                             <i class="devicon-github-original text-base"></i>
+                        </a>
+                        <a href="https://tinyurl.com/pingpalm" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <!-- OADAAD -->
             <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="frontend tools">
                 <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
                     <img src="images/dino.png" alt="Once a Dino" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
@@ -1039,7 +1065,6 @@
                 </div>
                 
                 <div class="px-2 flex flex-col flex-grow">
-                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Game Engine Arch</span>
                     <h3 class="text-xl font-bold text-white tracking-wide mb-3">Once a Dino...</h3>
                     <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
                         A narrative-driven 2D simulator engineered from scratch within the Godot Engine. Written in GDScript, the engine manages active collision systems, state-controlled level progression, and rendering logic optimized for 144Hz performance.
@@ -1049,11 +1074,11 @@
                         <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="dino">
                             Read More
                         </button>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                        <a href="https://github.com/SR-005/Once-a-Dino-always-a-Dino" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
                             <i class="devicon-github-original text-base"></i>
+                        </a>
+                        <a href="https://tinyurl.com/once-a-dino" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                 </div>
@@ -1196,7 +1221,7 @@
             <span class="font-mono text-xs uppercase tracking-widest text-purple-400 font-semibold mb-2 drop-shadow-md">Connect</span>
             <h2 class="text-4xl lg:text-5xl font-black tracking-tight text-white uppercase drop-shadow-lg mb-4">Digital Presence</h2>
             <p class="text-sm text-zinc-400 font-light max-w-xl leading-relaxed drop-shadow-md">
-                Whether you want to discuss system architecture, agentic workflows, or just talk code—my inbox is always open.
+                Drop me a message if you want to talk tech, build something cool, or just talk code.
             </p>
         </div>
 
