@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR.INIT</title>
+    <link rel="icon" type="image/png" href="favicon.png?v=2">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- 3D Model Viewer Library -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        background: '#050505', // Deeper black to let the glow pop
+                        brandPurple: '#A855F7',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #FAFAFA;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Custom premium timing function */
+        .ease-premium {
+            transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        /* Glass Panel Reusable Class */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+        .stack-mask {
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen relative px-4 py-6 md:px-16 md:py-8 flex flex-col justify-between overflow-x-hidden selection:bg-purple-500/30">
+
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-purple-600/20 blur-[120px] mix-blend-screen"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-blue-600/10 blur-[150px] mix-blend-screen"></div>
+        <div class="absolute top-[40%] left-[60%] w-[30vw] h-[30vw] rounded-full bg-indigo-500/10 blur-[100px] mix-blend-screen"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:24px_24px] opacity-50"></div>
+    </div>
+
+    <nav class="w-full flex justify-center mb-12 lg:mb-20 z-50 fixed top-6 left-0 right-0 px-4 pointer-events-none">
+        <div class="flex items-center gap-2 p-1.5 glass-panel rounded-full pointer-events-auto">
+            <a href="#home" class="nav-link px-5 py-2 text-xs rounded-full transition-all duration-300 font-semibold bg-white/10 text-white shadow-sm hover:bg-white/20">Home</a>
+            <a href="#techstack" class="nav-link px-5 py-2 text-xs rounded-full transition-all duration-300 font-medium text-zinc-400 hover:text-white">Stack</a>
+            <a href="#projects" class="nav-link px-5 py-2 text-xs rounded-full transition-all duration-300 font-medium text-zinc-400 hover:text-white">Projects</a>
+            <a href="#experience" class="nav-link px-5 py-2 text-xs rounded-full transition-all duration-300 font-medium text-zinc-400 hover:text-white">Experience</a>
+            <a href="#contact" class="nav-link px-5 py-2 text-xs rounded-full transition-all duration-300 font-medium text-zinc-400 hover:text-white">Socials</a>
+        </div>
+    </nav>
+
+    <!-- LANDING SECTION -->
+    <main id="home" class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center pt-24 pb-12 lg:pt-32 my-auto z-10">
+        
+        <div class="lg:col-span-7 flex flex-col items-start text-left">
+            <h1 class="text-4xl sm:text-3xl lg:text-3xl font-black tracking-tight text-white/50 leading-[1.05] mb-1 drop-shadow-lg">
+                Hi, I'm
+            </h1>
+            <h1 class="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tight text-purple-500 leading-[1.05] mb-4 drop-shadow-lg">
+                Sreeram
+            </h1>
+            <h1 class="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tight text-white/90 leading-[1.05] mb-4 drop-shadow-lg">
+                V Gopal
+            </h1>
+
+            <div class="flex flex-wrap gap-3 items-center mb-6">
+                <span class="px-4 py-1.5 rounded-full glass-panel text-xs font-mono font-medium text-purple-400">Applied ML Developer</span>
+                <span class="px-4 py-1.5 rounded-full glass-panel text-xs font-mono font-medium text-zinc-300">Data Scientist</span>
+                <span class="px-4 py-1.5 rounded-full glass-panel text-xs font-mono font-medium text-zinc-300">Backend Engineer</span>
+            </div>
+
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-xl mb-8 font-light drop-shadow-md">
+                Developing intelligent, data-driven systems from the model layer to the server. I bridge applied machine learning, data science pipelines, and robust Python backends.
+            </p>
+
+            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-panel text-[11px] font-mono tracking-wide text-zinc-300 mb-8">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+                </span>
+                <span>Available for Core Roles & Freelance</span>
+            </div>
+
+            <div class="flex flex-wrap gap-4 items-center mb-12 w-full">
+                <a href="#contact" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white text-xs font-semibold rounded-2xl tracking-wide shadow-lg hover:shadow-purple-500/20 transition-all duration-300 ease-premium group">
+                    <span>Initiate Contact</span>
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+                
+                <a href="https://drive.google.com/file/d/1KAXnTyEjdVXgDYV8NWRCgzvoZTAWiCUe/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 px-7 py-3.5 glass-panel hover:bg-white/10 text-zinc-200 text-xs font-semibold rounded-2xl tracking-wide transition-all duration-300 ease-premium">
+                    <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <span>View Resume</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Image & Hover Effects -->
+        <div class="lg:col-span-5 w-full flex justify-center lg:justify-end relative group cursor-default mt-8 lg:mt-0">
+            
+            <!-- Structural Anchor: Keeps all floating elements mapped exactly to the 400px card -->
+            <div class="relative w-full max-w-[400px]">
+                
+                <!-- Hidden Element 1: Top Right (Python) -->
+                <div class="absolute top-12 right-4 w-16 h-16 sm:w-20 sm:h-20 bg-purple-500/10 border border-purple-500/20 rounded-2xl flex items-center justify-center z-0 transition-all duration-700 ease-premium transform group-hover:translate-x-16 sm:group-hover:translate-x-24 group-hover:-translate-y-12 sm:group-hover:-translate-y-16 group-hover:rotate-12 group-hover:bg-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+                    <i class="devicon-python-plain text-3xl sm:text-4xl text-purple-400 drop-shadow-md transform transition-transform duration-700 group-hover:scale-110"></i>
+                </div>
+
+                <!-- Hidden Element 2: Middle Left (PostgreSQL) -->
+                <div class="absolute top-1/3 left-4 w-14 h-14 sm:w-16 sm:h-16 bg-amber-500/10 border border-amber-500/20 rounded-full flex items-center justify-center z-0 transition-all duration-700 delay-75 ease-premium transform group-hover:-translate-x-16 sm:group-hover:-translate-x-24 group-hover:-translate-y-4 group-hover:-rotate-12 group-hover:bg-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.3)]">
+                    <i class="devicon-postgresql-plain text-2xl sm:text-3xl text-amber-400 drop-shadow-md"></i>
+                </div>
+
+                <!-- Hidden Element 3: Bottom Right (NumPy Node) -->
+                <div class="absolute bottom-32 right-4 w-14 h-14 sm:w-16 sm:h-16 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center z-0 transition-all duration-700 delay-100 ease-premium transform group-hover:translate-x-16 sm:group-hover:translate-x-24 group-hover:translate-y-8 sm:group-hover:translate-y-12 group-hover:rotate-[24deg] group-hover:bg-sky-500/20 shadow-[0_0_30px_rgba(14,165,233,0.3)]">
+                    <i class="devicon-numpy-plain text-2xl sm:text-3xl text-sky-400 drop-shadow-md"></i>
+                </div>
+
+                <!-- Hidden Element 4: Bottom Left (GitHub Node) -->
+                <div class="absolute bottom-16 left-4 w-14 h-14 sm:w-16 sm:h-16 bg-white/5 border border-white/10 rounded-full flex items-center justify-center z-0 transition-all duration-700 delay-150 ease-premium transform group-hover:-translate-x-16 sm:group-hover:-translate-x-24 group-hover:translate-y-10 sm:group-hover:translate-y-14 group-hover:-rotate-12 group-hover:bg-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)] backdrop-blur-sm">
+                    <i class="devicon-github-original text-2xl sm:text-3xl text-zinc-300 drop-shadow-md"></i>
+                </div>
+
+                <!-- Hidden Element 5: Abstract Glass Rings (Top Left) -->
+                <div class="absolute top-8 left-8 w-20 h-20 border-[1px] border-purple-500/30 rounded-full z-0 transition-all duration-1000 delay-200 ease-premium transform group-hover:-translate-x-16 sm:group-hover:-translate-x-20 group-hover:-translate-y-16 sm:group-hover:-translate-y-20 group-hover:scale-[1.5] opacity-0 group-hover:opacity-100">
+                    <div class="absolute inset-2 border-[1px] border-blue-500/20 rounded-full"></div>
+                </div>
+
+                <!-- Main Image Card -->
+                <div class="relative w-full aspect-[4/5] rounded-[2rem] glass-panel p-2 overflow-hidden z-10 transition-all duration-700 ease-premium transform group-hover:-translate-y-4 group-hover:shadow-[0_40px_80px_rgba(168,85,247,0.2)] group-hover:border-purple-500/40">
+                    
+                    <!-- Inner Image Parallax -->
+                    <img 
+                        src="images/sreeram.png" 
+                        alt="Sreeram Profile" 
+                        class="w-full h-full object-cover rounded-[1.5rem] opacity-90 contrast-[1.05] transition-transform duration-700 ease-premium group-hover:scale-105"
+                        onerror="this.style.display='none'; document.getElementById('canvas-fallback').classList.remove('hidden');"
+                    >
+                    <div id="canvas-fallback" class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-400">
+                        FACING PROBLEM LOADING THIS IMAGE :(
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="max-w-6xl w-full mx-auto pt-24 pb-12 z-10 relative">
+        <!-- Soft Glass Divider -->
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12"></div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative">
+            
+            <!-- LEFT COLUMN: Image & Status -->
+            <!-- We added lg:sticky lg:top-28 lg:self-start here to lock it in the viewport -->
+            <div class="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-28 lg:self-start">
+                
+                <!-- Secondary Image Container -->
+                <div class="glass-panel p-2 rounded-[2rem] overflow-hidden group shrink-0">
+                    <div class="aspect-square rounded-[1.5rem] overflow-hidden relative">
+                        <!-- Main Image -->
+                        <img 
+                            src="images/sreeram2.png" 
+                            alt="Sreeram Working" 
+                            class="w-full h-full object-cover contrast-125 "
+                            onerror="this.style.display='none'; document.getElementById('about-img-fallback').classList.remove('hidden');"
+                        >
+                        <!-- Fallback Text -->
+                        <div id="about-img-fallback" class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-500 bg-[#050505]/50">
+                            [ SECONDARY_IMG_MOUNT ]
+                        </div>
+
+                        <!-- Floating ID Box Overlay (Matches Reference) -->
+                        <div class="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 glass-panel bg-[#050505]/60 backdrop-blur-2xl border border-white/10 rounded-[1.25rem] p-4 sm:p-5 shadow-[0_20px_40px_rgba(0,0,0,0.8)] group-hover:border-purple-500/40 group-hover:bg-[#050505]/70 transition-all duration-500 ease-premium z-10 flex flex-col justify-center">
+                            <h4 class="text-zinc-100 font-bold text-lg sm:text-xl tracking-tight mb-1.5 drop-shadow-md">Sreeram V Gopal</h4>
+                            <p class="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-purple-400 drop-shadow-sm flex items-center">
+                                B.TECH CSE <span class="text-zinc-500 mx-2">&middot;</span> ALBERTIAN INSTITUTE
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Status & Location Panel -->
+                <div class="glass-panel p-6 sm:p-8 rounded-[2rem] flex flex-col gap-5">
+                    <h3 class="font-mono text-xs uppercase tracking-widest text-purple-400 font-semibold drop-shadow-md mb-2">CURRENT STATUS</h3>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="mt-1 h-8 w-8 shrink-0 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-white font-medium">7th Semester, B.Tech in CSE</p>
+                            <p class="text-xs text-zinc-400 mt-1 leading-relaxed">Albertian Institute of Science and Technology</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="mt-1 h-8 w-8 shrink-0 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-white font-medium">Aluva, Kerala, India</p>
+                            <p class="text-xs text-zinc-400 mt-1">Available for Remote & Relocation</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="mt-1 h-8 w-8 shrink-0 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-white font-medium">Area's of Interest</p>
+                            <p class="text-xs text-zinc-400 mt-1">Agentic AI, Machine Learning, Scalable Backend Development, Web3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RIGHT COLUMN: Narrative Structure -->
+            <div class="lg:col-span-7 flex flex-col gap-6 text-zinc-300 text-sm sm:text-base leading-relaxed font-light">
+                
+                <!-- Main Header -->
+                <div class="mb-2">
+                    <span class="font-mono text-xs uppercase tracking-widest text-purple-400 font-semibold block mb-2 drop-shadow-md">ABOUT</span>
+                    <h2 class="text-4xl lg:text-6xl font-black tracking-tight text-white drop-shadow-lg"><span class="text-purple-500">Who</span> I Am</h2>
+                </div>
+                
+                <!-- Intro Panel -->
+                <div>
+                    <p class="mb-4">
+                        Hey, <span class="font-bold text-white">I'm Sreeram V Gopal</span>. I’m a developer who likes building software that can think, parsing chaotic data to find what actually matters, and writing the underlying backend infrastructure that makes it all run in production.
+                    </p>
+                    <p>
+                        I don't really get excited about building standard, paint-by-numbers web apps. Instead, I’m drawn to the complicated, open-ended space where applied machine learning, data engineering pipelines, and core server architecture collide.
+                    </p>
+                </div>
+
+                <!-- Journey Sub-header -->
+                <div class="mt-6 mb-2">
+                    <h3 class="text-3xl font-black tracking-tight text-white drop-shadow-lg mb-1">From Raw Data to Production Infrastructure</h3>
+                    <p class="mt-4 text-zinc-300">My path into software engineering didn’t start with typical web design. It started with a curiosity about how to handle real-world messiness and turn chaotic data into predictable logic.</p>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <!-- Phase 01 -->
+                    <div class="group p-6 sm:p-8 glass-panel rounded-[2rem] transition-all duration-500 ease-premium flex flex-col sm:flex-row items-start gap-5">
+                        <div class="h-12 w-12 shrink-0 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all duration-300">
+                            <span class="font-mono font-bold text-lg">01</span>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold tracking-wide mb-2 text-base">Learning to listen to data</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">I began in data science and traditional machine learning using tools like Pandas, NumPy, and Scikit-Learn to structure raw, unorganized information. Building regression and classification pipelines using Random Forests taught me that real-world data is never clean, and sanitizing it is half the battle.</p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 02 -->
+                    <div class="group p-6 sm:p-8 glass-panel rounded-[2rem] transition-all duration-500 ease-premium flex flex-col sm:flex-row items-start gap-5">
+                        <div class="h-12 w-12 shrink-0 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
+                            <span class="font-mono font-bold text-lg">02</span>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold tracking-wide mb-2 text-base">Breaking out of the sandbox</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">An incredible machine learning model sitting isolated inside a notebook is functionally useless; to make it valuable, it needs an engine and a house. This realization drove me straight into backend engineering, mastering frameworks like Django and FastAPI to handle asynchronous execution, database state coordination, and high-performance APIs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 03 -->
+                    <div class="group p-6 sm:p-8 glass-panel rounded-[2rem] transition-all duration-500 ease-premium flex flex-col sm:flex-row items-start gap-5">
+                        <div class="h-12 w-12 shrink-0 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-300">
+                            <span class="font-mono font-bold text-lg">03</span>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold tracking-wide mb-2 text-base">Building autonomous agency</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">Once I understood the models and the infrastructure, I wanted to build software with the "hands" to execute tasks on its own. Today, my focus is entirely on applied ML and agentic workflows—orchestrating models using LangChain, creating web automation pipelines that bypass bot detection, and connecting backends to decentralized Web3 protocols.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outro Panel -->
+                <div class="mt-4 glass-panel p-8 rounded-3xl transition-all duration-500 ease-premium">
+                    <h3 class="font-mono text-xs uppercase tracking-widest text-purple-400 font-semibold mb-4">What Keeps Me Building</h3>
+                    <p>
+                        At the end of the day, I view code as structural architecture. I genuinely enjoy taking wide-open, confusing problems and breaking them down into clean, predictable systems. If a project involves building smart automation pipelines, dealing with volatile data layers, or creating software intelligent enough to handle complex operations on its own, I'm probably trying to figure out how to build it right now.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK SECTION -->
+    <section id="techstack" class="max-w-6xl w-full mx-auto pt-24 pb-12 z-10 relative min-h-screen">
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mb-16"></div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative">
+            
+            <!-- LEFT COLUMN: Header, Filters & Grid -->
+            <div class="lg:col-span-7 flex flex-col">
+                
+                <!-- Section Header (Left Aligned) -->
+                <div class="flex flex-col items-start text-left mb-10">
+                    <span class="font-mono text-xs uppercase tracking-widest text-purple-400 font-semibold mb-2 drop-shadow-md">Superpowers aka </span>
+                    <h2 class="text-4xl lg:text-5xl font-black tracking-tight text-white uppercase drop-shadow-lg mb-4">Tech Stack</h2>
+                </div>
+
+                <!-- Filter Bar (Left Aligned) -->
+                <div class="flex flex-wrap justify-start gap-2 sm:gap-3 mb-10">
+                    <button class="filter-btn active px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-purple-500/20 text-purple-300 border border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.2)]" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="backend">Backend</button>
+                    <button class="filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="ai-data">AI & Data</button>
+                    <button class="filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="web3">Web3</button>
+                    <button class="filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="frontend">Frontend</button>
+                    <button class="filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="database">Database</button>
+                    <button class="filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="tools">Tools</button>
+                </div>
+                
+                <!-- Tech Grid (Adjusted to 2-3 columns to fit left side) -->
+                <div class="relative w-full pb-14" id="stack-collapse-wrapper">
+                    
+                    <div id="tech-grid-wrapper" class="overflow-hidden pt-10 transition-[max-height] duration-1000 ease-premium max-h-[440px] relative pb-4 stack-mask">
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5 transition-all duration-500" id="tech-grid">
+                            
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-500/10 cursor-default" data-category="frontend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-orange-500/10 group-hover:border-orange-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-html5-plain text-xl text-orange-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">HTML5</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 cursor-default" data-category="frontend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/10 group-hover:border-blue-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-css3-plain text-xl text-blue-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">CSS3</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow-500/10 cursor-default" data-category="frontend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-yellow-500/10 group-hover:border-yellow-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-javascript-plain text-xl text-yellow-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">JavaScript</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/10 cursor-default" data-category="frontend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-cyan-500/10 group-hover:border-cyan-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-tailwindcss-original text-xl text-cyan-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Tailwind CSS</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="frontend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-bootstrap-plain text-xl text-purple-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Frontend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Bootstrap</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="backend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-python-plain text-xl text-purple-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Backend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Python</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="backend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-fastapi-plain text-xl text-purple-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Backend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">FastAPI</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="backend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-django-plain text-xl text-purple-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Backend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Django / DRF</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 cursor-default" data-category="backend">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 group-hover:border-purple-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-flask-original text-xl text-purple-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Backend</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Flask</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 cursor-default" data-category="ai-data">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/10 group-hover:border-blue-500/20 transition-all duration-500 ease-premium">
+                                        <svg class="w-5 h-5 text-blue-400 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">AI & Data</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">LangChain</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 cursor-default" data-category="ai-data">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-indigo-500/10 group-hover:border-indigo-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-pandas-plain text-xl text-indigo-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">AI & Data</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Pandas</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-sky-500/10 cursor-default" data-category="ai-data">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-sky-500/10 group-hover:border-sky-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-numpy-plain text-xl text-sky-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">AI & Data</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">NumPy</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-500/10 cursor-default" data-category="ai-data">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-orange-500/10 group-hover:border-orange-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-scikitlearn-plain text-xl text-orange-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">AI & Data</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Scikit-Learn</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-500/10 cursor-default" data-category="ai-data">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-red-500/10 group-hover:border-red-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-opencv-plain text-xl text-red-500 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">AI & Data</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">OpenCV</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-500/10 cursor-default" data-category="ai-data">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-teal-500/10 group-hover:border-teal-500/20 transition-all duration-500 ease-premium">
+                                        <svg class="w-5 h-5 text-teal-400 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">AI & Data</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">MediaPipe</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 cursor-default" data-category="ai-data">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/10 group-hover:border-blue-500/20 transition-all duration-500 ease-premium">
+                                        <span class="text-lg font-black text-blue-400 drop-shadow-md">XG</span>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">AI & Data</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">XGBoost</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-500/10 cursor-default" data-category="ai-data">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-green-500/10 group-hover:border-green-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-matplotlib-plain text-xl text-green-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">AI & Data</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Matplotlib</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 cursor-default" data-category="ai-data">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-indigo-500/10 group-hover:border-indigo-500/20 transition-all duration-500 ease-premium">
+                                        <svg class="w-5 h-5 text-indigo-400 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4v16M20 4v16"></path></svg>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">AI & Data</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Seaborn</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/10 cursor-default" data-category="web3">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/10 group-hover:border-emerald-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-solidity-plain text-xl text-emerald-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Web3</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Solidity</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/10 cursor-default" data-category="web3">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/10 group-hover:border-emerald-500/20 transition-all duration-500 ease-premium">
+                                        <svg class="w-5 h-5 text-emerald-400 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Web3</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Web3.py</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/10 cursor-default" data-category="web3">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/10 group-hover:border-emerald-500/20 transition-all duration-500 ease-premium">
+                                        <svg class="w-5 h-5 text-emerald-400 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Web3</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">IPFS / Pinata</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-500/10 cursor-default" data-category="database">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-amber-500/10 group-hover:border-amber-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-postgresql-plain text-xl text-amber-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Database</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">PostgreSQL</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-500/10 cursor-default" data-category="database">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-amber-500/10 group-hover:border-amber-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-mysql-plain text-xl text-amber-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Database</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">MySQL & SQLite</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-rose-500/10 cursor-default" data-category="tools">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-rose-500/10 group-hover:border-rose-500/20 transition-all duration-500 ease-premium">
+                                        <svg class="w-5 h-5 text-rose-400 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Tools</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Playwright</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-rose-500/10 cursor-default" data-category="tools">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-rose-500/10 group-hover:border-rose-500/20 transition-all duration-500 ease-premium">
+                                        <i class="devicon-github-original text-xl text-rose-400 drop-shadow-md"></i>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Tools</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Git / GitHub</h4>
+                                </div>
+                            </div>
+
+                            <div class="tech-tile glass-panel p-5 rounded-[1.5rem] flex flex-col justify-between group transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-2xl hover:shadow-rose-500/10 cursor-default" data-category="tools">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div class="h-10 w-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-rose-500/10 group-hover:border-rose-500/20 transition-all duration-500 ease-premium">
+                                        <svg class="w-5 h-5 text-rose-400 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                                    </div>
+                                    <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/5 px-2 py-1 rounded-lg">Tools</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-zinc-100 font-bold text-sm tracking-wide group-hover:text-white transition-colors">Vercel & Render</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        </div>
+
+                    <div id="tech-expand-overlay" class="absolute bottom-0 left-0 right-0 h-32 flex items-end justify-center pb-2 z-10 transition-all duration-700 pointer-events-none">
+                        <button id="expand-stack-btn" class="pointer-events-auto group flex items-center gap-3 px-7 py-3 glass-panel bg-[#050505]/90 text-purple-300 hover:text-white text-[10px] sm:text-xs font-mono font-semibold rounded-full tracking-widest uppercase shadow-[0_0_20px_rgba(168,85,247,0.15)] hover:shadow-purple-500/30 hover:border-purple-500/50 transition-all duration-300 mb-2">
+                            <span id="expand-btn-text">Full Tech Stack</span>
+                            <svg id="expand-btn-icon" class="w-4 h-4 transform transition-transform group-hover:translate-y-0.5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Interactive 3D Model -->
+            <div class="lg:col-span-5 lg:sticky lg:top-28 lg:self-start h-[450px] lg:h-[calc(100vh-10rem)] mt-12 lg:mt-0">
+                <div class="w-full h-full flex flex-col items-center justify-center relative group transition-all duration-700 ease-premium">
+                    
+                    <model-viewer 
+                        src="props/spiderman.glb" 
+                        alt="A 3D Model representing my superpowers" 
+                        auto-rotate 
+                        rotation-per-second="30deg"
+                        camera-controls 
+                        disable-zoom
+                        shadow-intensity="1"
+                        shadow-softness="1"
+                        exposure="2.2"
+                        environment-image="https://modelviewer.dev/shared-assets/environments/aircraft_workshop_01_1k.hdr"
+                        
+                        camera-orbit="-45deg 95deg auto" 
+                        class="w-full h-full outline-none drop-shadow-[0_20px_40px_rgba(168,85,247,0.15)]"
+                        style="background-color: transparent;">
+                        
+                        <div id="model-fallback" slot="poster" class="absolute inset-0 flex flex-col items-center justify-center font-mono text-xs text-zinc-500 gap-3">
+                            <svg class="w-8 h-8 text-zinc-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                            <span>[ 3D_MODEL_MOUNT ]</span>
+                            <span class="text-[9px] max-w-[200px] text-center opacity-60">Requires a valid 'superman2.glb' file in your directory.</span>
+                        </div>
+                    </model-viewer>
+                    
+                    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-purple-500/10 border border-purple-500/20 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+                        <svg class="w-3.5 h-3.5 text-purple-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                        <span class="text-[10px] font-mono uppercase tracking-widest text-purple-300 font-semibold">Interact</span>
+                    </div>
+
+                    
+
+                </div>
+                <div class="flex flex-col items-start text-left mb-10">
+                    <span class="font-mono text-xs uppercase tracking-widest text-red-400 font-semibold mb-2 drop-shadow-md">Spider-<span class="text-blue-400">man</span> cause he's my fav</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="max-w-6xl w-full mx-auto pt-24 pb-12 z-10 relative min-h-screen">
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mb-16"></div>
+        
+        <div class="flex flex-col items-center text-center mb-12">
+            <h2 class="text-4xl lg:text-5xl font-black tracking-tight text-white uppercase drop-shadow-lg mb-4">Project Builds</h2>
+            <p class="text-sm text-zinc-400 font-light max-w-2xl leading-relaxed drop-shadow-md">
+                A selection of autonomous agents, predictive models, and scalable architectures I have built.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+            <button class="proj-filter-btn active px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-purple-500/20 text-purple-300 border border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.2)]" data-filter="all">All Specs</button>
+            <button class="proj-filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="ai-ml">AI & ML</button>
+            <button class="proj-filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="backend">Backend</button>
+            <button class="proj-filter-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] font-mono font-semibold tracking-widest uppercase transition-all duration-300 bg-[#121216]/60 text-zinc-400 border border-white/10 hover:border-white/20 hover:text-zinc-200 backdrop-blur-md" data-filter="web3">Web3</button>
+        </div>
+
+        <div class="relative w-full pb-14" id="projects-collapse-wrapper">
+            
+            <div id="projects-grid-wrapper" class="overflow-hidden transition-[max-height] duration-1000 ease-premium max-h-[1100px] relative pb-4 stack-mask">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 transition-all duration-500" id="projects-grid">
+            
+            <div class="proj-tile col-span-1 md:col-span-2 lg:col-span-3 glass-panel rounded-[2rem] p-6 lg:p-8 flex flex-col lg:flex-row gap-8 lg:gap-12 group transition-all duration-500 ease-premium hover:shadow-[0_0_40px_rgba(168,85,247,0.15)] hover:border-purple-500/30" data-category="ai-ml backend">
+                
+                <div class="w-full lg:w-1/2 aspect-video lg:aspect-auto overflow-hidden rounded-[1.5rem] relative glass-panel border border-white/5">
+                    <img src="images/railagent.png" alt="RailAgent" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div class="hidden absolute inset-0 flex flex-col items-center justify-center font-mono text-xs text-zinc-500 bg-[#050505]/50 gap-2">
+                        <svg class="w-8 h-8 text-zinc-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <span>IMAGE NOT FOUND :(</span>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-3 py-1 rounded-md bg-purple-500/20 border border-purple-500/20 text-purple-400 font-mono text-[9px] uppercase tracking-widest font-semibold flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span> PROTOTYPING
+                        </span>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-zinc-500">Agentic AI & Automation</span>
+                    </div>
+                    
+                    <h3 class="text-3xl lg:text-4xl font-black text-white tracking-tight mb-4 drop-shadow-md">RailAgent</h3>
+                    
+                    <p class="text-zinc-300 text-sm leading-relaxed font-light mb-4">
+                        An intelligent, autonomous agent built to take the manual effort out of train travel coordination. It acts as a personal booking assistant by launching automated browser sessions via Playwright to navigate complex transit portals on your behalf.
+                    </p>
+                    <p class="text-zinc-400 text-xs leading-relaxed font-light mb-8">
+                        Instead of constantly refreshing pages, a LangChain agentic layer dynamically tracks seat availability and automates high-speed workflows to secure Tatkal bookings before they vanish.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 mt-auto">
+                        <a href="#" target="_blank" class="flex items-center gap-2 px-5 py-2.5 bg-white text-[#050505] hover:bg-zinc-200 text-[11px] font-bold rounded-xl tracking-wide transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            Live System
+                        </a>
+                        <a href="#" target="_blank" class="flex items-center gap-2 px-5 py-2.5 glass-panel text-zinc-300 hover:text-white hover:border-white/30 text-[11px] font-bold rounded-xl tracking-wide transition-all duration-300">
+                            <i class="devicon-github-original text-base"></i>
+                            Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="ai-ml">
+                <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
+                    <img src="images/gradegaze.png" alt="GradeGaze" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-600">IMAGE NOT FOUND :(</div>
+                </div>
+                
+                <div class="px-2 flex flex-col flex-grow">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Predictive ML / Regression</span>
+                    <h3 class="text-xl font-bold text-white tracking-wide mb-3">GradeGaze</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
+                        A clean, straightforward machine learning tool built to predict future academic marks before final exams. Feeding past performance data into a high-performance XGBoost model bypasses guesswork to spot scoring trends early via Matplotlib charts.
+                    </p>
+                    
+                    <div class="flex items-center gap-2 pt-4 border-t border-white/5">
+                        <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="gradegaze">
+                            Read More
+                        </button>
+                        
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                            <i class="devicon-github-original text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="ai-ml backend">
+                <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
+                    <img src="images/summarease.png" alt="SummarEase" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-600">IMAGE NOT FOUND :(</div>
+                </div>
+                
+                <div class="px-2 flex flex-col flex-grow">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">NLP & Text Distillation</span>
+                    <h3 class="text-xl font-bold text-white tracking-wide mb-3">SummarEase</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
+                        An AI-powered reading assistant that deploys automated web-scraping to target URLs, bypassing layout noise. Raw text is funneled into a fine-tuned T5 Transformer model to generate human-grade summaries, all wrapped in a lightning-fast FastAPI backend.
+                    </p>
+                    
+                    <div class="flex items-center gap-2 pt-4 border-t border-white/5">
+                        <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="summarease">
+                            Read More
+                        </button>
+                        
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                            <i class="devicon-github-original text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="web3">
+                <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
+                    <img src="images/rekord.png" alt="Rekord" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-600">IMAGE NOT FOUND :(</div>
+                </div>
+                
+                <div class="px-2 flex flex-col flex-grow">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Web3 Infrastructure</span>
+                    <h3 class="text-xl font-bold text-white tracking-wide mb-3">Rekord</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
+                        Engineered to overcome the third-party API limitations, disadvantages, and verification loopholes encountered in RollCall3, Rekord is a completely custom-built POAP badge generation platform. It operates as a decentralized protocol turning event participation into permanent, on-chain Soulbound NFT credentials. Eligible users can claim their badges entirely gas-free, powered by an optimized EIP-712 meta-transaction layer handling all minting fees server-side.
+                    </p>
+                    
+                    <div class="flex items-center gap-2 pt-4 border-t border-white/5">
+                        <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="rekord">
+                            Read More
+                        </button>
+                        
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                            <i class="devicon-github-original text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="backend">
+                <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
+                    <img src="images/hopin.png" alt="Hop In" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-600">IMAGE NOT FOUND :(</div>
+                </div>
+                
+                <div class="px-2 flex flex-col flex-grow">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Concurrent Architecture</span>
+                    <h3 class="text-xl font-bold text-white tracking-wide mb-3">Hop In</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
+                        A peer-to-peer ride-sharing network for college students. The robust Django backend manages complex relational database logic via PostgreSQL, featuring spatial coordination to synchronize driver routes with pickup demands in real-time.
+                    </p>
+                    
+                    <div class="flex items-center gap-2 pt-4 border-t border-white/5">
+                        <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="hopin">
+                            Read More
+                        </button>
+                        
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                            <i class="devicon-github-original text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="ai-ml">
+                <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
+                    <img src="images/weatherornot.png" alt="WeatherOrNot" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-600">IMAGE NOT FOUND :(</div>
+                </div>
+                
+                <div class="px-2 flex flex-col flex-grow">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Time-Series Data Science</span>
+                    <h3 class="text-xl font-bold text-white tracking-wide mb-3">WeatherOrNot</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
+                        A climate tool calculating weather trajectories from scratch. It continuously streams historical and live telemetry through Pandas/NumPy, piping datasets into custom Scikit-Learn pipelines to forecast immediate atmospheric shifts.
+                    </p>
+                    
+                    <div class="flex items-center gap-2 pt-4 border-t border-white/5">
+                        <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="weatherornot">
+                            Read More
+                        </button>
+                        
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                            <i class="devicon-github-original text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="web3 backend">
+                <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
+                    <img src="images/credchain.png" alt="CredChain" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-600">IMAGE NOT FOUND :(</div>
+                </div>
+                
+                <div class="px-2 flex flex-col flex-grow">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Web3 Reputation</span>
+                    <h3 class="text-xl font-bold text-white tracking-wide mb-3">CredChain</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
+                        A decentralized professional identity network built on Polkadot’s MoonBase EVM. It utilizes Web3.py and Solidity smart contracts to securely bind cryptographic proofs of work directly to a freelancer's on-chain identity, minting IPFS-backed skill badges.
+                    </p>
+                    
+                    <div class="flex items-center gap-2 pt-4 border-t border-white/5">
+                        <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="credchain">
+                            Read More
+                        </button>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                            <i class="devicon-github-original text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="backend web3">
+                <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
+                    <img src="images/rollcall3.png" alt="RollCall3" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-600">IMAGE NOT FOUND :(</div>
+                </div>
+                
+                <div class="px-2 flex flex-col flex-grow">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Web3 Automation</span>
+                    <h3 class="text-xl font-bold text-white tracking-wide mb-3">RollCall3</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
+                        An automated attendance verification engine designed to bridge real-world meeting data with digital rewards. Using Pandas to parse Zoom CSVs, it filters attendees and hooks directly into the official POAP API to automatically distribute mint links.
+                    </p>
+                    
+                    <div class="flex items-center gap-2 pt-4 border-t border-white/5">
+                        <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="rollcall3">
+                            Read More
+                        </button>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                            <i class="devicon-github-original text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="ai-ml">
+                <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
+                    <img src="images/ecommerce.png" alt="E-Commerce Regression" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-600">IMAGE NOT FOUND :(</div>
+                </div>
+                
+                <div class="px-2 flex flex-col flex-grow">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Statistical Modeling</span>
+                    <h3 class="text-xl font-bold text-white tracking-wide mb-3">E-Commerce Analytics</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
+                        A targeted data science project built to analyze consumer purchasing behavior. Leveraging Scikit-Learn to isolate feature coefficients, the model quantifies how platform session metrics directly affect cart conversions.
+                    </p>
+                    
+                    <div class="flex items-center gap-2 pt-4 border-t border-white/5">
+                        <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="ecommerce">
+                            Read More
+                        </button>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                            <i class="devicon-github-original text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="ai-ml frontend">
+                <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
+                    <img src="images/pingpalm.png" alt="PingPalm" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-600">IMAGE NOT FOUND :(</div>
+                </div>
+                
+                <div class="px-2 flex flex-col flex-grow">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Computer Vision & HCI</span>
+                    <h3 class="text-xl font-bold text-white tracking-wide mb-3">PingPalm</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
+                        A real-time, gesture-controlled multiplayer game. Built on Pygame, the backend leverages MediaPipe to track coordinate vectors of players' index fingers through a webcam feed, mapping physical spatial data into digital gameplay inputs.
+                    </p>
+                    
+                    <div class="flex items-center gap-2 pt-4 border-t border-white/5">
+                        <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="pingpalm">
+                            Read More
+                        </button>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                            <i class="devicon-github-original text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-tile group flex flex-col glass-panel rounded-[2rem] p-4 transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(168,85,247,0.1)] hover:border-white/20" data-category="frontend tools">
+                <div class="w-full aspect-video overflow-hidden rounded-[1.25rem] mb-6 relative bg-white/5">
+                    <img src="images/dino.png" alt="Once a Dino" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700 ease-premium" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <div class="hidden absolute inset-0 flex items-center justify-center font-mono text-xs text-zinc-600">IMAGE NOT FOUND :(</div>
+                </div>
+                
+                <div class="px-2 flex flex-col flex-grow">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-purple-400 mb-2 font-semibold">Game Engine Arch</span>
+                    <h3 class="text-xl font-bold text-white tracking-wide mb-3">Once a Dino...</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed font-light mb-6 flex-grow line-clamp-4 group-hover:text-zinc-300 transition-colors">
+                        A narrative-driven 2D simulator engineered from scratch within the Godot Engine. Written in GDScript, the engine manages active collision systems, state-controlled level progression, and rendering logic optimized for 144Hz performance.
+                    </p>
+                    
+                    <div class="flex items-center gap-2 pt-4 border-t border-white/5">
+                        <button class="read-more-btn flex-grow py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 hover:text-purple-300 text-[10px] font-mono font-bold tracking-widest uppercase transition-all border border-purple-500/20 hover:border-purple-500/40" data-id="dino">
+                            Read More
+                        </button>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Live Site">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all border border-transparent hover:border-white/20" title="Source Code">
+                            <i class="devicon-github-original text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div> </div> <div id="projects-expand-overlay" class="absolute bottom-0 left-0 right-0 h-32 flex items-end justify-center pb-2 z-10 transition-all duration-700 pointer-events-none">
+                <button id="expand-projects-btn" class="pointer-events-auto group flex items-center gap-3 px-7 py-3 glass-panel bg-[#050505]/90 text-purple-300 hover:text-white text-[10px] sm:text-xs font-mono font-semibold rounded-full tracking-widest uppercase shadow-[0_0_20px_rgba(168,85,247,0.15)] hover:shadow-purple-500/30 hover:border-purple-500/50 transition-all duration-300 mb-2">
+                    <span id="expand-projects-btn-text">Reveal All Projects</span>
+                    <svg id="expand-projects-btn-icon" class="w-4 h-4 transform transition-transform group-hover:translate-y-0.5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+            </div>
+            
+        </div> </section>
+    </section>
+
+    <!-- EXPERIENCE & ACTIVITIES SECTION -->
+    <section id="experience" class="max-w-6xl w-full mx-auto pt-24 pb-12 z-10 relative">
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mb-16"></div>
+        
+        <div class="flex flex-col items-center text-center mb-16">
+            <span class="font-mono text-xs uppercase tracking-widest text-purple-400 font-semibold mb-2 drop-shadow-md">The Journey</span>
+            <h2 class="text-4xl lg:text-5xl font-black tracking-tight text-white uppercase drop-shadow-lg mb-4">Experience & Activities</h2>
+            <p class="text-sm text-zinc-400 font-light max-w-2xl leading-relaxed drop-shadow-md">
+                A look at my professional internships, community mentorship, and the independent projects I've been building along the way.
+            </p>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto">
+            
+            <div class="absolute left-4 sm:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-emerald-500/50 via-white/10 to-transparent -translate-x-1/2 z-0"></div>
+
+            <div class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between w-full mb-12 group">
+                <div class="absolute left-4 sm:left-1/2 w-4 h-4 rounded-full bg-[#050505] border-2 border-emerald-500 -translate-x-1/2 mt-6 sm:mt-0 z-10 group-hover:bg-emerald-500 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.8)] transition-all duration-500 ease-premium"></div>
+                
+                <div class="hidden sm:block w-1/2 pr-12 text-right">
+                    <span class="font-mono text-xs uppercase tracking-widest text-zinc-500 font-semibold">July 2024</span>
+                </div>
+                
+                <div class="w-full sm:w-1/2 pl-12 sm:pl-12">
+                    <div class="glass-panel p-6 rounded-[1.5rem] transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(16,185,129,0.1)] hover:border-emerald-500/30">
+                        <span class="sm:hidden font-mono text-[10px] uppercase tracking-widest text-emerald-400 font-semibold block mb-2">July 2024</span>
+                        <h3 class="text-xl font-bold text-white tracking-wide mb-1">Django/Backend Engineering Intern</h3>
+                        <h4 class="text-xs font-mono text-zinc-400 mb-4 flex items-center gap-2">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                            Camino Infotech
+                        </h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed font-light mb-4">
+                            This internship was a great practical introduction to Python web development. It pushed me beyond writing basic scripts and into the Django ecosystem, where I gained hands-on experience designing APIs, setting up server-side architecture, and learning how real-world applications manage data.
+                        </p>
+                        <a href="https://drive.google.com/file/d/1S2potr33uXDri5iqapN5hMKwVUZyfu6x/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-mono text-emerald-300 hover:bg-emerald-500/20 transition-colors">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path></svg>
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative flex flex-col sm:flex-row-reverse items-start sm:items-center justify-between w-full mb-12 group">
+                <div class="absolute left-4 sm:left-1/2 w-4 h-4 rounded-full bg-[#050505] border-2 border-purple-500 -translate-x-1/2 mt-6 sm:mt-0 z-10 group-hover:bg-purple-500 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.8)] transition-all duration-500 ease-premium"></div>
+                
+                <div class="hidden sm:block w-1/2 pl-12 text-left">
+                    <span class="font-mono text-xs uppercase tracking-widest text-zinc-500 font-semibold">2025 - Present</span>
+                </div>
+                
+                <div class="w-full sm:w-1/2 pl-12 sm:pr-12 sm:pl-0 text-left sm:text-right">
+                    <div class="glass-panel p-6 rounded-[1.5rem] transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(168,85,247,0.1)] hover:border-purple-500/30">
+                        <span class="sm:hidden font-mono text-[10px] uppercase tracking-widest text-purple-400 font-semibold block mb-2">2025 - Present</span>
+                        <h3 class="text-xl font-bold text-white tracking-wide mb-1">Technical Mentor</h3>
+                        <h4 class="text-xs font-mono text-zinc-400 mb-4 flex items-center sm:justify-end gap-2">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                            TinkerHub
+                        </h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed font-light">
+                            I spend my time mentoring other developers in the community, helping them build a solid foundation in Python, full-stack development, and database management. I love breaking down essential developer tools—like version control with Git and GitHub, or setting up a backend server—into practical, easy-to-understand advice they can actually use in their own projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between w-full mb-12 group">
+                <div class="absolute left-4 sm:left-1/2 w-4 h-4 rounded-full bg-[#050505] border-2 border-blue-500 -translate-x-1/2 mt-6 sm:mt-0 z-10 group-hover:bg-blue-500 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.8)] transition-all duration-500 ease-premium"></div>
+                
+                <div class="hidden sm:block w-1/2 pr-12 text-right">
+                    <span class="font-mono text-xs uppercase tracking-widest text-zinc-500 font-semibold">December 2025</span>
+                </div>
+                
+                <div class="w-full sm:w-1/2 pl-12 sm:pl-12">
+                    <div class="glass-panel p-6 rounded-[1.5rem] transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(59,130,246,0.1)] hover:border-blue-500/30">
+                        <span class="sm:hidden font-mono text-[10px] uppercase tracking-widest text-blue-400 font-semibold block mb-2">December 2025</span>
+                        <h3 class="text-xl font-bold text-white tracking-wide mb-1">AI Development Bootcamp</h3>
+                        <h4 class="text-xs font-mono text-zinc-400 mb-4 flex items-center gap-2">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            TinkerHub
+                        </h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed font-light mb-4">
+                            Jumped into an intensive, hands-on bootcamp focused purely on applied artificial intelligence. It was a great space to collaborate with others, dive deep into modern machine learning toolkits, and experiment with building intelligent systems from the ground up.
+                        </p>
+                        <a href="https://drive.google.com/file/d/1uLglFDBKvukVVKPtvzEgbdpZA00OA80f/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-[10px] font-mono text-blue-300 hover:bg-blue-500/20 transition-colors">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path></svg>
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative flex flex-col sm:flex-row-reverse items-start sm:items-center justify-between w-full group">
+                <div class="absolute left-4 sm:left-1/2 w-4 h-4 rounded-full bg-[#050505] border-2 border-orange-500 -translate-x-1/2 mt-6 sm:mt-0 z-10 group-hover:bg-orange-500 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.8)] transition-all duration-500 ease-premium"></div>
+                
+                <div class="hidden sm:block w-1/2 pl-12 text-left">
+                    <span class="font-mono text-xs uppercase tracking-widest text-zinc-500 font-semibold">2024 - Present</span>
+                </div>
+                
+                <div class="w-full sm:w-1/2 pl-12 sm:pr-12 sm:pl-0 text-left sm:text-right">
+                    <div class="glass-panel p-6 rounded-[1.5rem] transition-all duration-500 ease-premium hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(249,115,22,0.1)] hover:border-orange-500/30">
+                        <span class="sm:hidden font-mono text-[10px] uppercase tracking-widest text-orange-400 font-semibold block mb-2">2024 - Present</span>
+                        <h3 class="text-xl font-bold text-white tracking-wide mb-1">Independent Developer</h3>
+                        <h4 class="text-xs font-mono text-zinc-400 mb-4 flex items-center sm:justify-end gap-2">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            Autonomous Development
+                        </h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed font-light mb-4">
+                            I'm constantly building and shipping my own full-stack projects. Whether it's wiring up autonomous AI agents like RailAgent, training predictive models for GradeGaze, or deploying Web3 protocols like Rekord, I learn best by solving real problems and pushing code to production.
+                        </p>
+                        <a href="#projects" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg glass-panel text-[10px] font-mono text-zinc-300 hover:text-white transition-colors">
+                            View Project Specs
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SOCIALS & CONTACT SECTION -->
+    <section id="contact" class="max-w-6xl w-full mx-auto pt-24 pb-12 z-10 relative">
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mb-16"></div>
+        
+        <!-- Section Header -->
+        <div class="flex flex-col items-center text-center mb-16">
+            <span class="font-mono text-xs uppercase tracking-widest text-purple-400 font-semibold mb-2 drop-shadow-md">Connect</span>
+            <h2 class="text-4xl lg:text-5xl font-black tracking-tight text-white uppercase drop-shadow-lg mb-4">Digital Presence</h2>
+            <p class="text-sm text-zinc-400 font-light max-w-xl leading-relaxed drop-shadow-md">
+                Whether you want to discuss system architecture, agentic workflows, or just talk code—my inbox is always open.
+            </p>
+        </div>
+
+        <!-- Socials Grid (Full Width) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- GitHub -->
+            <a href="https://github.com/SR-005" target="_blank" class="glass-panel p-8 rounded-[2rem] flex flex-col items-center justify-center gap-5 group transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(255,255,255,0.05)] hover:border-white/20">
+                <div class="h-16 w-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500 ease-premium">
+                    <svg class="w-8 h-8 text-zinc-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white font-bold tracking-wide mb-1">GitHub</h3>
+                    <span class="text-[11px] font-mono text-zinc-500 group-hover:text-zinc-400 transition-colors">@SR-005</span>
+                </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/sreeram-v-gopal-7477082a0/" target="_blank" class="glass-panel p-8 rounded-[2rem] flex flex-col items-center justify-center gap-5 group transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(59,130,246,0.1)] hover:border-blue-500/30">
+                <div class="h-16 w-16 rounded-full bg-blue-500/5 border border-blue-500/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/10 transition-all duration-500 ease-premium">
+                    <svg class="w-8 h-8 text-zinc-400 group-hover:text-blue-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white font-bold tracking-wide mb-1">LinkedIn</h3>
+                    <span class="text-[11px] font-mono text-zinc-500 group-hover:text-blue-400/70 transition-colors">Let's Connect</span>
+                </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/9744902099" target="_blank" class="glass-panel p-8 rounded-[2rem] flex flex-col items-center justify-center gap-5 group transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(16,185,129,0.1)] hover:border-emerald-500/30">
+                <div class="h-16 w-16 rounded-full bg-emerald-500/5 border border-emerald-500/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/10 transition-all duration-500 ease-premium">
+                    <svg class="w-8 h-8 text-zinc-400 group-hover:text-emerald-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413Z"/></svg>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white font-bold tracking-wide mb-1">WhatsApp</h3>
+                    <span class="text-[11px] font-mono text-zinc-500 group-hover:text-emerald-400/70 transition-colors">Direct Message</span>
+                </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:sreeramvg100@gmail.com" class="glass-panel p-8 rounded-[2rem] flex flex-col items-center justify-center gap-5 group transition-all duration-500 ease-premium hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(168,85,247,0.1)] hover:border-purple-500/30">
+                <div class="h-16 w-16 rounded-full bg-purple-500/5 border border-purple-500/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-500/10 transition-all duration-500 ease-premium">
+                    <svg class="w-8 h-8 text-zinc-400 group-hover:text-purple-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-white font-bold tracking-wide mb-1">Email</h3>
+                    <span class="text-[11px] font-mono text-zinc-500 group-hover:text-purple-400/70 transition-colors">sreeramvg100@gmail.com</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- MODAL BLOCK FOR PROJECTS SECTION -->
+    <div id="project-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-500 ease-premium">
+        <div id="project-modal-bg" class="absolute inset-0 bg-[#050505]/80 backdrop-blur-xl cursor-pointer"></div>
+        
+        <div id="project-modal-card" class="relative w-full max-w-5xl glass-panel rounded-[2rem] p-6 lg:p-8 flex flex-col lg:flex-row gap-8 lg:gap-10 max-h-[95vh] overflow-y-auto transform scale-95 transition-all duration-500 ease-premium shadow-[0_0_50px_rgba(168,85,247,0.15)] border-purple-500/30">
+            
+            <button id="close-modal-btn" class="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/20 text-zinc-400 hover:text-white transition-colors z-10 border border-transparent hover:border-white/10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="w-full lg:w-2/5 aspect-video lg:aspect-auto overflow-hidden rounded-[1.5rem] relative bg-white/5 shrink-0 border border-white/5">
+                <img id="modal-img" src="" alt="Project Image" class="w-full h-full object-cover">
+            </div>
+
+            <div class="w-full lg:w-3/5 flex flex-col justify-center py-2">
+                <div class="flex flex-wrap items-center gap-3 mb-4">
+                    <span id="modal-domain" class="font-mono text-[9px] uppercase tracking-widest text-purple-400 font-semibold bg-purple-500/10 px-3 py-1 rounded-md border border-purple-500/20">Domain</span>
+                    <span id="modal-toolkit" class="font-mono text-[9px] uppercase tracking-widest text-zinc-400 bg-white/5 px-3 py-1 rounded-md border border-white/10">Toolkit</span>
+                </div>
+                
+                <h3 id="modal-title" class="text-3xl font-black text-white tracking-tight mb-6 drop-shadow-md">Project Title</h3>
+                
+                <div class="space-y-5 text-zinc-300 text-sm leading-relaxed font-light mb-8">
+                    <div>
+                        <h4 class="text-white font-semibold text-xs tracking-wide mb-1 flex items-center gap-2">
+                            <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            The Problem It Solves
+                        </h4>
+                        <p id="modal-problem" class="text-zinc-400">Problem text goes here.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold text-xs tracking-wide mb-1 flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            The Architecture & Solution
+                        </h4>
+                        <p id="modal-summary">Summary text goes here.</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-4 mt-auto">
+                    <a href="#" target="_blank" class="flex items-center gap-2 px-5 py-2.5 bg-white text-[#050505] hover:bg-zinc-200 text-[11px] font-bold rounded-xl tracking-wide transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        Live System
+                    </a>
+                    <a href="#" target="_blank" class="flex items-center gap-2 px-5 py-2.5 glass-panel text-zinc-300 hover:text-white hover:border-white/30 text-[11px] font-bold rounded-xl tracking-wide transition-all duration-300">
+                        <i class="devicon-github-original text-base"></i>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // ==========================================
+        // 4. ACTIVE NAVIGATION HIGHLIGHT LOGIC
+        // ==========================================
+        const sections = document.querySelectorAll('main, section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Define the active and inactive Tailwind classes
+        const activeClasses = ['font-semibold', 'bg-white/10', 'text-white', 'shadow-sm', 'hover:bg-white/20'];
+        const inactiveClasses = ['font-medium', 'text-zinc-400', 'hover:text-white'];
+
+        // Configuration for the observer (Trigger when section hits top 30% of screen)
+        const observerOptions = {
+            root: null,
+            rootMargin: '-30% 0px -70% 0px', 
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let currentId = entry.target.getAttribute('id');
+                    
+                    // Map the "about" section to keep the "Home" link active since it doesn't have its own nav link
+                    if (currentId === 'about') currentId = 'home';
+                    
+                    // Loop through links and apply active/inactive styles
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === `#${currentId}`) {
+                            link.classList.remove(...inactiveClasses);
+                            link.classList.add(...activeClasses);
+                        } else {
+                            link.classList.remove(...activeClasses);
+                            link.classList.add(...inactiveClasses);
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Tell the observer to watch all sections
+        sections.forEach(section => {
+            if (section.id) observer.observe(section);
+        });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // ==========================================
+            // 1. TECH STACK LOGIC
+            // ==========================================
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const techTiles = document.querySelectorAll('.tech-tile');
+            const gridContainer = document.getElementById('tech-grid');
+            
+            const gridWrapper = document.getElementById('tech-grid-wrapper');
+            const expandOverlay = document.getElementById('tech-expand-overlay');
+            const expandBtn = document.getElementById('expand-stack-btn');
+            const btnText = document.getElementById('expand-btn-text');
+            const btnIcon = document.getElementById('expand-btn-icon');
+            let isStackExpanded = false;
+
+            function toggleStack() {
+                if (!isStackExpanded) {
+                    isStackExpanded = true;
+                    gridWrapper.style.maxHeight = gridWrapper.scrollHeight + 100 + 'px';
+                    gridWrapper.classList.remove('stack-mask');
+                    expandOverlay.classList.remove('h-32');
+                    expandOverlay.classList.add('h-20');
+                    btnText.innerText = "Collapse Tech Stack";
+                    btnIcon.classList.add('rotate-180', 'group-hover:-translate-y-0.5');
+                    btnIcon.classList.remove('group-hover:translate-y-0.5');
+                    setTimeout(() => {
+                        if(isStackExpanded) gridWrapper.style.maxHeight = 'none';
+                    }, 1000); 
+                } else {
+                    isStackExpanded = false;
+                    gridWrapper.style.maxHeight = gridWrapper.scrollHeight + 'px';
+                    void gridWrapper.offsetWidth; 
+                    gridWrapper.style.maxHeight = '440px';
+                    gridWrapper.classList.add('stack-mask');
+                    expandOverlay.classList.add('h-32');
+                    expandOverlay.classList.remove('h-20');
+                    btnText.innerText = "Reveal Full Stack";
+                    btnIcon.classList.remove('rotate-180', 'group-hover:-translate-y-0.5');
+                    btnIcon.classList.add('group-hover:translate-y-0.5');
+                    document.getElementById('techstack').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            if(expandBtn) expandBtn.addEventListener('click', toggleStack);
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (btn.classList.contains('active')) return;
+                    if (!isStackExpanded) toggleStack(); 
+
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-purple-500/20', 'text-purple-300', 'border-purple-500/50', 'shadow-[0_0_15px_rgba(168,85,247,0.2)]', 'active');
+                        b.classList.add('bg-[#121216]/60', 'text-zinc-400', 'border-white/10');
+                    });
+                    
+                    btn.classList.remove('bg-[#121216]/60', 'text-zinc-400', 'border-white/10');
+                    btn.classList.add('bg-purple-500/20', 'text-purple-300', 'border-purple-500/50', 'shadow-[0_0_15px_rgba(168,85,247,0.2)]', 'active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+                    gridContainer.style.minHeight = gridContainer.offsetHeight + 'px';
+
+                    techTiles.forEach(tile => {
+                        const category = tile.getAttribute('data-category');
+                        if (filterValue !== 'all' && category !== filterValue) {
+                            tile.style.opacity = '0';
+                            tile.style.transform = 'scale(0.9)';
+                        }
+                    });
+
+                    setTimeout(() => {
+                        techTiles.forEach(tile => {
+                            const category = tile.getAttribute('data-category');
+                            if (filterValue === 'all' || category === filterValue) {
+                                tile.style.display = 'flex';
+                            } else {
+                                tile.style.display = 'none';
+                            }
+                        });
+
+                        gridContainer.style.minHeight = 'auto';
+                        setTimeout(() => {
+                            techTiles.forEach(tile => {
+                                if (tile.style.display === 'flex') {
+                                    tile.style.opacity = '1';
+                                    tile.style.transform = 'scale(1)';
+                                }
+                            });
+                        }, 50);
+                    }, 300);
+                });
+            });
+
+            // ==========================================
+            // 2. MODAL & PROJECT DATA LOGIC
+            // ==========================================
+            const projectDatabase = {
+                'gradegaze': {
+                    title: 'GradeGaze',
+                    domain: 'Predictive ML & Regression Pipelines',
+                    toolkit: 'Python // XGBoost // Scikit-Learn // Matplotlib',
+                    problem: 'Academic performance evaluation is usually reactive, relying on past report cards rather than mathematically parsing multi-variable behaviors to forecast score trajectories before it’s too late.',
+                    summary: 'A clean, straightforward machine learning tool built to predict future academic marks before the final exams even arrive. By feeding past performance data into a high-performance XGBoost model, the system bypasses guesswork to spot scoring trends early. It handles all the backend data processing and translates complex machine learning predictions into simple, easy-to-read charts using Matplotlib, letting students and educators see exactly where their grades are heading.',
+                    image: 'images/gradegaze.png'
+                },
+                'summarease': {
+                    title: 'SummarEase',
+                    domain: 'NLP & Text Distillation',
+                    toolkit: 'Python // T5 Transformers // BeautifulSoup4 // FastAPI',
+                    problem: 'The internet is drowning in information. When you open a long-form article or research paper, the core insights are usually buried under thousands of words of fluff, ads, and page layout clutter, wasting massive amounts of reading time.',
+                    summary: 'An AI-powered reading assistant that instantly extracts the absolute core summary from any long-form web page. Under the hood, the system deploys automated web-scraping pipelines using BeautifulSoup4 to target a URL, bypass layout noise, and extract raw text across diverse web structures. This unstructured data is then cleaned and funneled into a fine-tuned, state-of-the-art T5 sequence-to-sequence Transformer model to generate human-grade neural text summaries. The entire engine is wrapped in a highly optimized FastAPI backend to ensure lightning-fast execution speeds.',
+                    image: 'images/summarease.png'
+                },
+                'rekord': {
+                    title: 'Rekord',
+                    domain: 'Web3 Data & Gasless Protocol',
+                    toolkit: 'EIP-712 // Soulbound Tokens (SBTs) // IPFS',
+                    problem: 'Traditional digital certificates are easily forged, while standard Web3 minting forces users to pay volatile network gas fees. Furthermore, virtual events suffer from massive badge fraud, as there is usually no automated way to prove someone actually stayed and paid attention.',
+                    summary: 'A decentralized protocol that turns event participation into permanent, on-chain Soulbound NFT credentials. It serves as a secure digital proxy for any real-world certificate, gamifying the experience with different tier levels. To prevent virtual event fraud, the backend features an automated verification pipeline that parses raw participant session data and enforces a strict attendance threshold. Eligible users can then claim their badges completely gas-free, thanks to an optimized EIP-712 meta-transaction layer that handles all minting fees server-side.',
+                    image: 'images/rekord.png'
+                },
+                'hopin': {
+                    title: 'Hop In',
+                    domain: 'Concurrent Backend Architecture',
+                    toolkit: 'Python // Django // PostgreSQL // State Optimization',
+                    problem: 'College students face a daily challenge: finding reliable transportation. Students spend hours arranging rides, dealing with inconsistent pricing, or relying on unsafe, unofficial arrangements, all while hundreds of vehicle seats go unused on campus every day.',
+                    summary: 'A lightweight, secure peer-to-peer ride-sharing network built exclusively for verified college students to share their daily commutes without corporate overhead or surge pricing. Built using a robust Django server architecture, the backend manages complex relational database logic via PostgreSQL to handle live user states without bottlenecking. It features streamlined spatial coordination logic to synchronize driver routes with passenger pickup demands in real-time, safely matching students heading along the same paths.',
+                    image: 'images/hopin.png'
+                },
+                'weatherornot': {
+                    title: 'WeatherOrNot',
+                    domain: 'Time-Series Predictive Pipelines',
+                    toolkit: 'Python // Pandas // NumPy // Scikit-Learn',
+                    problem: 'Most weather applications don\'t actually do any data science; they simply fetch pre-computed forecasts from a commercial API and display them. They rely entirely on external third-party engines rather than modeling raw historical data.',
+                    summary: 'A predictive climate tool that bypasses ready-made forecasts to calculate weather trajectories from scratch. The system continuously maintains a dynamic rolling window of the past 30 days of historical weather metrics, paired with live telemetry captured right up to the current moment. Using Pandas and NumPy to clean and stream this continuous data feed, the architecture pipes the real-time datasets into custom Scikit-Learn regression and classification pipelines to forecast immediate changes in the weather matrix.',
+                    image: 'images/weatherornot.png'
+                },
+                'credchain': {
+                    title: 'CredChain',
+                    domain: 'Web3 & Decentralized Reputation Infrastructure',
+                    toolkit: 'Solidity // Python (Web3.py) // Flask // MoonBase (Polkadot) // IPFS',
+                    problem: 'Centralized freelancing platforms completely control user reputation data, lock freelancers into their walled gardens, and charge massive service fees. Furthermore, these platforms lack an immutable, transparent way to prove code authorship or verify that a freelancer\'s portfolio isn\'t just copied and pasted from someone else.',
+                    summary: 'A decentralized professional identity network built on Polkadot’s MoonBase EVM layer that gives freelancers absolute ownership over their work history. To eliminate fake portfolios, the backend utilizes Web3.py and Solidity smart contracts to securely bind a cryptographic hash proof of a deliverable directly to the freelancer\'s on-chain identity. Once a client authenticates via MetaMask, their feedback is instantly committed to the blockchain, automatically minting verifiable milestone skill badges backed by decentralized IPFS metadata.',
+                    image: 'images/credchain.png'
+                },
+                'rollcall3': {
+                    title: 'RollCall3',
+                    domain: 'Web3 Integration & Automated Gatekeeping Pipelines',
+                    toolkit: 'Python // Flask // Pandas // POAP API',
+                    problem: 'Manually sorting through virtual meeting logs to check who actually attended an event and then sending out individual digital reward badges to hundreds of participants takes hours of administrative work. Organizers also struggle to filter out ghost users who join a stream for two minutes just to farm rewards.',
+                    summary: 'An automated attendance verification and Web3 incentive distribution engine designed to bridge real-world meeting data with digital rewards. Acting as an intelligent coordinator, the system uses Pandas to instantly parse raw Zoom CSV reports, normalize messy session timestamps, and enforce a strict 80% attendance duration threshold to weed out fraudulent claims. Qualified attendees are automatically mapped, and the backend hooks directly into the official POAP API to request mint links and distribute them via automated email queues.',
+                    image: 'images/rollcall3.png'
+                },
+                'ecommerce': {
+                    title: 'E-Commerce Linear Regression',
+                    domain: 'Foundational Analytics & Statistical Modeling',
+                    toolkit: 'Scikit-Learn // Pandas // Linear Modeling',
+                    problem: 'E-commerce companies burn through marketing budgets blindly without understanding exactly which digital user behaviors directly scale revenue.',
+                    summary: 'A targeted data science project built to analyze consumer purchasing behavior and isolate specific economic levers. Serving as a crucial milestone in my data science foundations, the project handles exploratory regression modeling over historical digital transactions. By leveraging Scikit-Learn to isolate feature coefficients and clear out multicollinearity, the model quantifies how platform session metrics directly affect final cart conversions, providing an empirical roadmap for platform revenue optimization.',
+                    image: 'images/ecommerce.png'
+                },
+                'pingpalm': {
+                    title: 'PingPalm',
+                    domain: 'Computer Vision & Human-Computer Interaction',
+                    toolkit: 'Python // OpenCV // MediaPipe // Pygame',
+                    problem: 'Traditional keyboard and mouse controls for local multiplayer games can feel static and disconnected. However, moving to touchless, gesture-based controls requires transforming raw webcam video frames into precise, real-time gaming inputs without introducing erratic tracking jitter or frame lag that breaks the gameplay physics.',
+                    summary: 'A real-time, gesture-controlled multiplayer Pong game that transforms your palms into digital game controllers. Built on top of Pygame, the backend leverages MediaPipe to isolate and track the coordinate vectors of both players\' index fingers simultaneously through a live webcam feed. The engine constantly maps these physical spatial data points into the digital game loop, handling dynamic ball physics, mid-game obstacle generation, and velocity scaling that spikes the ball\'s speed with every successful paddle collision.',
+                    image: 'images/pingpalm.png'
+                },
+                'dino': {
+                    title: 'Once a Dino, Always a Dino',
+                    domain: '2D Game Development & Interactive Storytelling',
+                    toolkit: 'Godot Engine // GDScript // 2D Art & Animation',
+                    problem: 'Most classic running games are basic, loop-based endless runners that lack narrative depth, level progression, or complex state management. Building a story-driven runner requires managing transitions across multiple environments, handling complex state logic for collectibles, and optimizing render performance.',
+                    summary: 'A narrative-driven, level-based 2D running simulator engineered from scratch within the Godot Engine. Written in GDScript, the game abandons predictable infinite loops to tell a dark, compelling story through state-controlled level progression and cinematic 2D cutscenes. The engine manages active collision systems across diverse biomes, keeps track of score-based food collectibles, and scales hurdle mechanics smoothly, fully optimized to execute at a high-performance 144Hz refresh rate.',
+                    image: 'images/dino.png'
+                }
+            };
+
+            const modal = document.getElementById('project-modal');
+            const modalCard = document.getElementById('project-modal-card');
+            const modalBg = document.getElementById('project-modal-bg');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const readMoreBtns = document.querySelectorAll('.read-more-btn');
+
+            const elTitle = document.getElementById('modal-title');
+            const elDomain = document.getElementById('modal-domain');
+            const elToolkit = document.getElementById('modal-toolkit');
+            const elProblem = document.getElementById('modal-problem');
+            const elSummary = document.getElementById('modal-summary');
+            const elImage = document.getElementById('modal-img');
+
+            readMoreBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const projId = btn.getAttribute('data-id');
+                    const data = projectDatabase[projId];
+
+                    if(data) {
+                        elTitle.innerText = data.title;
+                        elDomain.innerText = data.domain;
+                        elToolkit.innerText = data.toolkit;
+                        elProblem.innerText = data.problem;
+                        elSummary.innerText = data.summary;
+                        elImage.src = data.image;
+
+                        modal.classList.remove('opacity-0', 'pointer-events-none');
+                        modalCard.classList.remove('scale-95');
+                        modalCard.classList.add('scale-100');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            function closeModal() {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modalCard.classList.remove('scale-100');
+                modalCard.classList.add('scale-95');
+                document.body.style.overflow = '';
+            }
+
+            if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if(modalBg) modalBg.addEventListener('click', closeModal);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('opacity-0')) {
+                    closeModal();
+                }
+            });
+
+            // ==========================================
+            // 3. PROJECT COLLAPSE & FILTERING LOGIC
+            // ==========================================
+            const projGridWrapper = document.getElementById('projects-grid-wrapper');
+            const projExpandOverlay = document.getElementById('projects-expand-overlay');
+            const expandProjBtn = document.getElementById('expand-projects-btn');
+            const projBtnText = document.getElementById('expand-projects-btn-text');
+            const projBtnIcon = document.getElementById('expand-projects-btn-icon');
+            let isProjExpanded = false;
+
+            function toggleProjects() {
+                if (!isProjExpanded) {
+                    isProjExpanded = true;
+                    projGridWrapper.style.maxHeight = projGridWrapper.scrollHeight + 100 + 'px';
+                    projGridWrapper.classList.remove('stack-mask');
+                    
+                    projExpandOverlay.classList.remove('h-32');
+                    projExpandOverlay.classList.add('h-20');
+                    
+                    projBtnText.innerText = "Collapse Projects";
+                    projBtnIcon.classList.add('rotate-180', 'group-hover:-translate-y-0.5');
+                    projBtnIcon.classList.remove('group-hover:translate-y-0.5');
+                    
+                    setTimeout(() => {
+                        if(isProjExpanded) projGridWrapper.style.maxHeight = 'none';
+                    }, 1000); 
+                } else {
+                    isProjExpanded = false;
+                    projGridWrapper.style.maxHeight = projGridWrapper.scrollHeight + 'px';
+                    void projGridWrapper.offsetWidth; 
+                    
+                    projGridWrapper.style.maxHeight = '1100px'; 
+                    projGridWrapper.classList.add('stack-mask');
+                    
+                    projExpandOverlay.classList.add('h-32');
+                    projExpandOverlay.classList.remove('h-20');
+                    
+                    projBtnText.innerText = "Reveal All Projects";
+                    projBtnIcon.classList.remove('rotate-180', 'group-hover:-translate-y-0.5');
+                    projBtnIcon.classList.add('group-hover:translate-y-0.5');
+
+                    document.getElementById('projects').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            if(expandProjBtn) expandProjBtn.addEventListener('click', toggleProjects);
+
+            const projFilterBtns = document.querySelectorAll('.proj-filter-btn');
+            const projTiles = document.querySelectorAll('.proj-tile');
+            const projGrid = document.getElementById('projects-grid');
+
+            projFilterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (btn.classList.contains('active')) return;
+                    if (!isProjExpanded) toggleProjects();
+
+                    projFilterBtns.forEach(b => {
+                        b.classList.remove('bg-purple-500/20', 'text-purple-300', 'border-purple-500/50', 'shadow-[0_0_15px_rgba(168,85,247,0.2)]', 'active');
+                        b.classList.add('bg-[#121216]/60', 'text-zinc-400', 'border-white/10');
+                    });
+                    
+                    btn.classList.remove('bg-[#121216]/60', 'text-zinc-400', 'border-white/10');
+                    btn.classList.add('bg-purple-500/20', 'text-purple-300', 'border-purple-500/50', 'shadow-[0_0_15px_rgba(168,85,247,0.2)]', 'active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+                    projGrid.style.minHeight = projGrid.offsetHeight + 'px';
+
+                    projTiles.forEach(tile => {
+                        const categories = tile.getAttribute('data-category').split(' ');
+                        if (filterValue !== 'all' && !categories.includes(filterValue)) {
+                            tile.style.opacity = '0';
+                            tile.style.transform = 'scale(0.9)';
+                        }
+                    });
+
+                    setTimeout(() => {
+                        projTiles.forEach(tile => {
+                            const categories = tile.getAttribute('data-category').split(' ');
+                            if (filterValue === 'all' || categories.includes(filterValue)) {
+                                tile.style.display = 'flex'; 
+                            } else {
+                                tile.style.display = 'none';
+                            }
+                        });
+
+                        projGrid.style.minHeight = 'auto';
+                        setTimeout(() => {
+                            projTiles.forEach(tile => {
+                                if (tile.style.display !== 'none') {
+                                    tile.style.opacity = '1';
+                                    tile.style.transform = 'scale(1)';
+                                }
+                            });
+                        }, 50);
+                    }, 300);
+                });
+            });
+
+        }); // END OF DOM CONTENT LOADED WRAPPER
+    </script>
+
+    <footer class="w-full max-w-6xl mx-auto mt-12 lg:mt-20 flex justify-between items-center border-t border-white/10 pt-6 font-mono text-[10px] text-zinc-500 select-none z-10">
+        <div>PERSONAL PORTFOLIO WEBSITE OF SREERAM V GOPAL</div>
+        <div>© 2026 SREERAM V GOPAL</div>
+    </footer>
+
+</body>
+</html>
